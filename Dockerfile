@@ -1,17 +1,55 @@
-# Utilisation de l'image officielle de Ubuntu comme base
-FROM ubuntu:latest
+##################################################################################
+# Utiliser une image de base Debian
+FROM debian:latest
 
-# Installation d'Apache2
-RUN apt-get update && apt-get install -y apache2
+##################################################################################
+# Mettre à jour les packages #
+##############################
+RUN apt update && apt full-upgrade -y
 
-# Exposition du port 80 pour accéder au serveur web
-EXPOSE 80
+##################################################################################
+# Installer Cinnamon et les dépendances #
+#########################################
+RUN apt install -y cinnamon-desktop-environment
 
-# Définition du répertoire de travail
-WORKDIR /var/www/html
+##################################################################################
+# Configurer le gestionnaire de fenêtres #
+##########################################
+RUN update-alternatives --set x-session-manager /usr/bin/cinnamon-session
 
-# Copie du contenu du répertoire courant dans le conteneur
-COPY . /var/www/html/
+##################################################################################
+# Installer noVNC #
+###################
+RUN apt install -y novnc
 
-# Commande pour démarrer le serveur Apache2
-CMD ["apachectl", "-D", "FOREGROUND"]
+##################################################################################
+# Installer logiciel #
+######################
+
+RUN apt install -y libreoffice
+RUN apt install -y firefox-esr
+
+##################################################################################
+# Créer le fichier ~/.xinitrc #
+###############################
+RUN echo "exec cinnamon-session" >> ~/.xinitrc
+
+##################################################################################
+# Définir le répertoire de travail par défaut #
+###############################################
+WORKDIR /home/marc
+
+##################################################################################
+# Créer un volume pour les données utilisateurs #
+#################################################
+VOLUME /home/marc/data
+
+##################################################################################
+# Exposer le port 8888 pour VNC Web #
+#####################################
+EXPOSE 8888
+
+##################################################################################
+# Lancer Xinit lors du démarrage du conteneur #
+###############################################
+CMD ["xinit", "--", "novnc", "--listen", "8888"]
