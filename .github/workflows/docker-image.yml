@@ -35,7 +35,7 @@ jobs:                                                                     #
     # ------------------------------------------------------------------- #
     -                                                                     #
      name: Build the Docker image                                         #
-     run: docker build . -t cinnamon-desktop                              #
+     run: docker build . -t cinnamon-desktop --build-arg PUID=${PUID} --build-arg PGID=${PGID} #
     # ------------------------------------------------------------------- #
     -                                                                     #
      name: Push the Docker image                                          #
