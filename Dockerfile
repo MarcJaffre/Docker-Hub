@@ -5,7 +5,7 @@ FROM debian:latest
 ##################################################################################
 # Mettre à jour les packages #
 ##############################
-RUN apt update && apt full-upgrade -y
+#RUN apt update && apt full-upgrade -y
 
 ##################################################################################
 # Installer Cinnamon et les dépendances #
