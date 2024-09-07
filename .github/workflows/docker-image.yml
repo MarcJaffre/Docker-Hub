@@ -28,4 +28,4 @@ jobs:                                                                     #
     # ------------------------------------------------------------------- #
     -                                                                     #
       name: Build the Docker image                                        #
-       run: docker build -t cinnamon .                                    #
+      uses: actions/checkout@v4                                           #
