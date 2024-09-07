@@ -25,7 +25,6 @@ RUN apt install -y novnc
 ##################################################################################
 # Installer logiciel #
 ######################
-
 RUN apt install -y libreoffice
 RUN apt install -y firefox-esr
 
