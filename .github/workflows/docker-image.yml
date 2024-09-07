@@ -34,8 +34,8 @@ jobs:                                                                     #
     # ------------------------------------------------------------------- #
     - name: Build the Docker image                                        #
       run: |                                                              #
-        docker build . --file Dockerfile --tag cinnamon                   #
-        docker push                      --tag cinnamon                   #
+       docker build -t my-cinnamon-image .
+       docker push my-cinnamon-image
     # ------------------------------------------------------------------- #
     #- name: Push on Docker-Hub                                           #
     # ------------------------------------------------------------------- #
