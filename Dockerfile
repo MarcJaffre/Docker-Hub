@@ -43,6 +43,8 @@ ARG PGID
 ENV PUID=${PUID}
 ENV PGID=${PGID}
 
+RUN chown -R ${PUID}:${PGID} /home/marc
+
 ##################################################################################
 # Définir le répertoire de travail par défaut #
 ###############################################
