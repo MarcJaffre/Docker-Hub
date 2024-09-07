@@ -1,10 +1,3 @@
-markdown
-
-Verify
-
-Open In Editor
-Edit
-Copy code
 # Utilisation de l'image officielle de Ubuntu comme base
 FROM ubuntu:latest
 
