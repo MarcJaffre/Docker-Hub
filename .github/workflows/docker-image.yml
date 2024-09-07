@@ -42,7 +42,6 @@ jobs:                                                                     #
       with:
        password: ${{ secrets.DOCKER_HUB_TOKEN }}
        repository: ${{ secrets.DOCKER_HUB_USERNAME }}/cinnamon
-      tag: latest
   # --------------------------------------------------------------------- #
 ###########################################################################
 #
