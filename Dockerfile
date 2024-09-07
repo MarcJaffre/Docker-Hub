@@ -1,20 +1,24 @@
-# Use an official Python runtime as a parent image
-FROM python:3.7-slim
+markdown
 
-# Set the working directory to /app
-WORKDIR /app
+Verify
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+Open In Editor
+Edit
+Copy code
+# Utilisation de l'image officielle de Ubuntu comme base
+FROM ubuntu:latest
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# Installation d'Apache2
+RUN apt-get update && apt-get install -y apache2
 
-# Make port 80 available to the world outside this container
+# Exposition du port 80 pour accéder au serveur web
 EXPOSE 80
 
-# Define environment variable
-ENV NAME World
+# Définition du répertoire de travail
+WORKDIR /var/www/html
 
-# Run app.py when the container launches
-CMD ["python", "app.py"]
+# Copie du contenu du répertoire courant dans le conteneur
+COPY . /var/www/html/
+
+# Commande pour démarrer le serveur Apache2
+CMD ["apachectl", "-D", "FOREGROUND"]
