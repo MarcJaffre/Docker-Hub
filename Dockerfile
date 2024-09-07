@@ -20,13 +20,13 @@ RUN update-alternatives --set x-session-manager /usr/bin/cinnamon-session
 ##################################################################################
 # Installer noVNC #
 ###################
-#RUN apt install -y novnc
+RUN apt install -y novnc
 
 ##################################################################################
 # Installer logiciel #
 ######################
-#RUN apt install -y libreoffice
-#RUN apt install -y firefox-esr
+RUN apt install -y libreoffice
+RUN apt install -y firefox-esr
 
 ##################################################################################
 # Créer le fichier ~/.xinitrc #
@@ -36,19 +36,19 @@ RUN update-alternatives --set x-session-manager /usr/bin/cinnamon-session
 ##################################################################################
 # Définir le répertoire de travail par défaut #
 ###############################################
-#WORKDIR /home/marc
+WORKDIR /home/marc
 
 ##################################################################################
 # Créer un volume pour les données utilisateurs #
 #################################################
-#VOLUME /home/marc/data
+VOLUME /home/marc/data
 
 ##################################################################################
 # Exposer le port 8888 pour VNC Web #
 #####################################
-#EXPOSE 8888
+EXPOSE 8888
 
 ##################################################################################
 # Lancer Xinit lors du démarrage du conteneur #
 ###############################################
-#CMD ["xinit", "--", "novnc", "--listen", "8888"]
+CMD ["xinit", "--", "novnc", "--listen", "8888"]
