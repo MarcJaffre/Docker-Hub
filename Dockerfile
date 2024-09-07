@@ -5,17 +5,17 @@ FROM debian:latest
 ##################################################################################
 # Mettre à jour les packages #
 ##############################
-#RUN apt update && apt full-upgrade -y
+RUN apt update && apt full-upgrade -y
 
 ##################################################################################
 # Installer Cinnamon et les dépendances #
 #########################################
-#RUN apt install -y cinnamon-desktop-environment
+RUN apt install -y cinnamon-desktop-environment
 
 ##################################################################################
 # Configurer le gestionnaire de fenêtres #
 ##########################################
-#RUN update-alternatives --set x-session-manager /usr/bin/cinnamon-session
+RUN update-alternatives --set x-session-manager /usr/bin/cinnamon-session
 
 ##################################################################################
 # Installer noVNC #
