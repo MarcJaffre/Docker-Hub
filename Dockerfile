@@ -31,7 +31,7 @@ RUN apt install -y firefox-esr
 ##################################################################################
 # Créer le fichier ~/.xinitrc #
 ###############################
-#RUN echo "exec cinnamon-session" >> ~/.xinitrc
+RUN echo "exec cinnamon-session" >> ~/.xinitrc
 
 ##################################################################################
 # Définir le répertoire de travail par défaut #
