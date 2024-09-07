@@ -35,7 +35,7 @@ jobs:                                                                     #
     # ------------------------------------------------------------------- #
     -                                                                     #
      name: Build the Docker image                                         #
-     run: docker build -f ./Dockerfile -t cinnamon-desktop                #
+     run: docker build -f ./Dockerfile -t cinnamon-desktop .              #
     # ------------------------------------------------------------------- #
     # ------------------------------------------------------------------- #
     -                                                                     #
