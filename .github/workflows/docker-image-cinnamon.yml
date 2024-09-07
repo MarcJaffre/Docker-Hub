@@ -8,6 +8,12 @@ on:                                                                       #
   push:                                                                   #
     branches: [ "main" ]                                                  #
   # --------------------------------------------------------------------- #
+  workflow_dispatch:                                                      #
+    inputs:                                                               #
+     dockerfile:                                                          #
+      description: 'Path to Dockerfile'                                   #
+      required: true                                                      #
+      default: './Dockerfile'                                             #
 ###########################################################################
 #
 #
@@ -32,7 +38,7 @@ jobs:                                                                     #
     # ------------------------------------------------------------------- #
     -                                                                     #
      name: Build the Docker image                                         #
-     run: docker build -f ./Dockerfile -t cinnamon-desktop .              #
+     run: docker build -t cinnamon-desktop .                              #
     # ------------------------------------------------------------------- #
     -                                                                     #
      name: Push the Docker image                                          #
