@@ -38,7 +38,7 @@ jobs:                                                                     #
     # ------------------------------------------------------------------- #
     -                                                                     #
      name: Build the Docker image                                         #
-     run: docker build -t cinnamon-desktop .                              #
+     run: docker build -f ${{ inputs.dockerfile }} -t cinnamon-desktop .  #
     # ------------------------------------------------------------------- #
     -                                                                     #
      name: Push the Docker image                                          #
