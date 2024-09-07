@@ -28,5 +28,4 @@ jobs:                                                                     #
     # ------------------------------------------------------------------- #
     -                                                                     #
       name: Build the Docker image                                        #
-       run: |                                                             #
-        docker build -t cinnamon .                                        #
+       run: docker build -t cinnamon .                                    #
