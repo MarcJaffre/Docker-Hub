@@ -37,8 +37,12 @@ jobs:                                                                     #
        docker build -t my-cinnamon-image .
        docker push my-cinnamon-image
     # ------------------------------------------------------------------- #
-    #- name: Push on Docker-Hub                                           #
-    # ------------------------------------------------------------------- #
+    - name: Tag image
+      uses: docker/tag-action@v1
+      with:
+       password: ${{ secrets.DOCKER_HUB_TOKEN }}
+       repository: ${{ secrets.DOCKER_HUB_USERNAME }}/cinnamon
+      tag: latest
   # --------------------------------------------------------------------- #
 ###########################################################################
 #
