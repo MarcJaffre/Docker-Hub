@@ -41,7 +41,7 @@ WORKDIR /home/marc
 ##################################################################################
 # Créer un volume pour les données utilisateurs #
 #################################################
-VOLUME /home/marc/data
+VOLUME /home/marc/
 
 ##################################################################################
 # Exposer le port 8888 pour VNC Web #
