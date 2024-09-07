@@ -33,6 +33,16 @@ RUN apt install -y firefox-esr
 ###############################
 RUN echo "exec cinnamon-session" >> ~/.xinitrc
 
+
+##################################################################################
+# Definir Utilisateur #
+#######################
+ARG PUID
+ARG PGID
+
+ENV PUID=${PUID}
+ENV PGID=${PGID}
+
 ##################################################################################
 # Définir le répertoire de travail par défaut #
 ###############################################
