@@ -40,8 +40,8 @@ jobs:                                                                     #
     -                                                                     #
      name: Push the Docker image                                          #
      uses: docker/build-push-action@v6                                    #
-     with:
-      push: true
-      tags: ${{ secrets.DOCKER_HUB_USERNAME }}/cinnamon:latest
+     with:                                                                #
+      push: true                                                          #
+      tags: ${{ secrets.DOCKER_HUB_USERNAME }}/cinnamon:latest            #
     # ------------------------------------------------------------------- #
 ###########################################################################
