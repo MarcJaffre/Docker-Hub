@@ -22,7 +22,6 @@ jobs:                                                                     #
     runs-on: ubuntu-latest                                                #
     # ------------------------------------------------------------------- #
     steps:                                                                #
-    - name: Build auto when a push                                        #
     - uses: actions/checkout@v4                                           #    
     - name: Build the Docker image                                        #
       run: docker build . --file Dockerfile --tag cinnamon:$(date +%s)    #
