@@ -33,8 +33,9 @@ jobs:                                                                     #
        password: ${{ secrets.DOCKER_HUB_TOKEN }}                          #
     # ------------------------------------------------------------------- #
     - name: Build the Docker image                                        #
-      run: docker build . --file Dockerfile --tag cinnamon                #
-           docker push                      --tag cinnamon                #
+      run: |                                                              #
+        docker build . --file Dockerfile --tag cinnamon                   #
+        docker push                      --tag cinnamon                   #
     # ------------------------------------------------------------------- #
     #- name: Push on Docker-Hub                                           #
     # ------------------------------------------------------------------- #
