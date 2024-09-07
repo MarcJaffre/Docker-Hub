@@ -39,6 +39,9 @@ jobs:                                                                     #
     # ------------------------------------------------------------------- #
     -                                                                     #
      name: Push the Docker image                                          #
-     run: docker push cinnamon-desktop                                    #
+     uses: docker/build-push-action@v6                                    #
+     with:
+      push: true
+      tags: ${{ secrets.DOCKER_HUB_USERNAME }}/cinnamon:latest
     # ------------------------------------------------------------------- #
 ###########################################################################
