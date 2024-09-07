@@ -1,10 +1,8 @@
 name: Docker Image
-
 on:
   push:
     branches:
       - main
-
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -23,4 +21,3 @@ jobs:
         with:
           context: .
           push: true
-          tags: MarcJaffre/automaker:latest
