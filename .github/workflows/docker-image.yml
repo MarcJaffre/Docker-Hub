@@ -35,20 +35,8 @@ jobs:                                                                     #
     # ------------------------------------------------------------------- #
     -                                                                     #
      name: Build the Docker image                                         #
-     run: |
-      docker build . -t cinnamon-desktop --build-arg PUID=${PUID} --build-arg PGID=${PGID} #
+     run: docker build . -t cinnamon-desktop                              #
     # ------------------------------------------------------------------- #
-    -
-     name: Set environment variables
-     env:
-      PUID: ${{ inputs.PUID }}
-      PGID: ${{ inputs.PUID }}
-    # ------------------------------------------------------------------- #
-    - 
-     name: Save PUID and PGID as outputs
-     run: |
-     echo "PUID=${PUID}" >> $GITHUB_OUTPUT
-     echo "PGID=${PGID}" >> $GITHUB_OUTPUT
     # ------------------------------------------------------------------- #
     -                                                                     #
      name: Push the Docker image                                          #
